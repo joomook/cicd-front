@@ -8,7 +8,7 @@ podTemplate(label: label, containers: [
 containerTemplate(name: 'npm', image: 'node:lts', command: 'cat', ttyEnabled: true),
 //containerTemplate(name: 'gradle', image: 'gradle:4.5.1-jdk8', command: 'cat', ttyEnabled: true),
 //containerTemplate(name: 'maven', image: 'maven:3.3.9-jdk-8-alpine', ttyEnabled: true, command:
-'cat'),
+//'cat'),
 containerTemplate(name: "scanner", image: "newtmitch/sonar-scanner", ttyEnabled: true, command:
 "cat"),
 containerTemplate(name: 'docker', image: 'docker:dind', command: 'dockerd --
@@ -28,7 +28,7 @@ git credentialsId: 'github-lab20', url: 'https://github.com/joomook/cicd-front/t
 }
 
 		// #2 Properties 파일 읽기
-    def props = readProperties file:"C:\Users\WOOMINKIM\cicd-front\kubernetes/pipeline.properties"
+    def props = readProperties file:"./kubernetes/pipeline.properties"
 def tag = props["version"]
 def dockerRegistry = props["dockerRegistry"]
 def credentialRegistry=props["credentialRegistry"]
