@@ -24,7 +24,7 @@ containerTemplate(name: 'kubectl', image: 'roffe/kubectl', command: 'cat', ttyEn
 
 		// #1 Github 소스 가져오기
     stage('Get Source') {
-git credentialsId: 'joomook', url: 'https://github.com/joomook/cicd-front/tree/master/kubernetes', branch: 'master'
+git credentialsId: 'github-lab20', url: 'https://github.com/joomook/cicd-front/tree/master/kubernetes', branch: 'master'
 }
 
 		// #2 Properties 파일 읽기
